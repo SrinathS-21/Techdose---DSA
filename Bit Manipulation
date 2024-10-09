@@ -1,0 +1,23 @@
+# Bit Manipulation Problems and Solutions
+
+### Overview
+In this file, we'll explore solutions to several classic bit manipulation problems. The solutions make use of efficient bitwise operations to solve problems that would otherwise require more complex algorithms. Each problem includes an explanation of the approach and a Java implementation.
+
+---
+
+## 1. Single Number  
+**Problem**: Every element appears twice except for one. Find that single element.
+
+### Approach:
+Use the XOR operator (`^`) to cancel out the elements that appear twice. XORing a number with itself results in 0, and XORing a number with 0 results in the number itself. Therefore, after XORing all elements, only the single number will remain.
+
+```java
+class Solution {
+    public int singleNumber(int[] nums) {
+        int a = 0;
+        for (int i = 0; i < nums.length; i++) {
+            a ^= nums[i];  // XOR operation
+        }
+        return a;  // The single number
+    }
+}
